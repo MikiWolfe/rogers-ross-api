@@ -1,27 +1,22 @@
-console.log('hello world')
+console.log("hello world");
 
-const quoteEl = document.getElementById('quote')
-const authorEl = document.getElementById('author')
-const quoteURL = "https://mikiwolfe.github.io/rogers-ross-api/data/data.json"
+const quoteEl = document.getElementById("quote");
+const authorEl = document.getElementById("author");
+const quoteURL = "https://mikiwolfe.github.io/rogers-ross-api/data/data.json";
 
-
-let randomQuote 
+let randomQuote;
 
 const getQuote = () => {
-fetch(quoteURL).then((res) => {
-    return res.json()
-})
-.then((data) => {
-randomQuote = data[Math.floor(Math.random() * data.length)]
-quoteEl.innerHTML = randomQuote.quote
-authorEl.innerHTML = "-" + "  " + randomQuote.author
-})
-return randomQuote
-}
+  fetch(quoteURL)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      randomQuote = data[Math.floor(Math.random() * data.length)];
+      quoteEl.innerHTML = randomQuote.quote;
+      authorEl.innerHTML = "-" + "  " + randomQuote.author;
+    });
+  return randomQuote;
+};
 
-setInterval(getQuote, 8000)
-
-
-
-
-
+setInterval(getQuote, 8000);
