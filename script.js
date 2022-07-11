@@ -2,7 +2,9 @@ console.log('hello world')
 
 const quoteEl = document.getElementById('quote')
 const authorEl = document.getElementById('author')
-const quoteURL = ""
+const quoteURL = "https://mikiwolfe.github.io/rogers-ross-api/data/data.json"
+
+
 let randomQuote 
 
 const getQuote = () => {
